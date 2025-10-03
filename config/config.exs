@@ -14,12 +14,11 @@ config :tetr_is, TetrIsWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: TetrIsWeb.ErrorHTML, json: TetrIsWeb.ErrorJSON],
+    formats: [json: TetrIsWeb.ErrorJSON],
     layout: false
   ],
   pubsub_server: TetrIs.PubSub,
-  # Generate new one if needed
-  live_view: [signing_salt: "your_signing_salt"]
+  live_view: [signing_salt: "secret"]
 
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
